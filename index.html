@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #F2F2F2;
+    --second-bg-color: #0A3855;
+    --text-color: #000;
+    --second-text-color: #fff;
+}
+body{
+    background-color: var(--bg-color);
+}
+
+.container-main{
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 0px 15px 10px;
+}
+
+
+
+/* Navbar Start */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* default css end */
+/* navbar regular css start */
+.navbar-area {
+  background: var(--bg-color);
+}
+.site-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a.site-logo {
+  font-size: 26px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+.site-navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.site-navbar ul li a {
+  color: #fff;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+}
+.site-navbar ul li a:hover {
+  background: rgba(255,255,255,.1);
+}
+/* navbar regular css end */
+
+
+/* nav-toggler css start */
+.nav-toggler {
+  border: 3px solid #ED7D31;
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  height: 39px;
+  display: none;
+}
+.nav-toggler span, 
+.nav-toggler span:before, 
+.nav-toggler span:after {
+  width: 28px;
+  height: 3px;
+  background-color: #ED7D31;
+  display: block;
+  transition: .3s;
+}
+.nav-toggler span:before {
+  content: '';
+  transform: translateY(-9px);
+}
+.nav-toggler span:after {
+  content: '';
+  transform: translateY(6px);
+}
+.nav-toggler.toggler-open span {
+  background-color: transparent;
+}
+.nav-toggler.toggler-open span:before {
+  transform: translateY(0px) rotate(45deg);
+}
+.nav-toggler.toggler-open span:after {
+  transform: translateY(-3px) rotate(-45deg);
+}
+/* nav-toggler css start */
+
+.client-name{
+    color: #ED7D31;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+/* Home Start */
+#home .container-main .home-content h1{
+    text-align: center;
+    background-color: var(--second-bg-color);
+    padding: 5px;
+    font-family: 'Roboto', sans-serif;
+    color: var(--second-text-color);
+    font-weight: lighter;
+}
+img{
+    width: 90px;
+    max-width: 100%;
+    border-radius: 6px;
+}
+.plan-content{
+    text-align: center;
+}
+.plan-content a p{
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Grid Container One */
+.grid-container-one{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 35px;
+    margin-top: 20px;
+}
+
+.care-plan{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+
+.goals{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.shift-notes{
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.medical{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.calender{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.edit-client{
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.new-user{
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.edit-user{
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.my-profile{
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.log-out{
+    grid-column: 3/4;
+    grid-row: 4/5;
+}
+
+/* mobile breakpoint start */
+@media screen and (max-width: 3000px) {
+  .container {
+    max-width: 720px;
+  }
+  /* navbar css for mobile start */
+  .nav-toggler{
+    display: block;
+  }
+  .site-navbar {
+    min-height: 60px;
+  }
+  .site-navbar ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px);
+    left: 0;
+    top: 60px;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid #444;
+    /* background-color: rgba(0,0,0,.75); */
+    max-height: 0;
+    overflow: hidden;
+    /* transition: .3s; */
+  }
+  .site-navbar ul li {
+    width: 100%;
+    text-align: center;
+    background-color: var(--second-bg-color);
+    max-width: 870px;
+    margin-top: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+  }
+  .site-navbar ul li a {
+    padding: 12px;
+  }
+  .site-navbar ul li a:hover {
+    background-color: rgba(255,255,255,.1);
+  }
+  .site-navbar ul.open {
+    max-height: 100vh;
+    overflow: visible;
+    background-color: var(--bg-color);
+  }
+   
+  /* navbar css for mobile end */
+}
+/* mobile breakpoint end */
+
+
+@media screen and (max-width:768px) {
+    .site-navbar ul li {
+       font-size: 15px;
+       width: 94%;
+    }
+}
+
+@media only screen and (max-width: 767px) and (orientation: landscape) {
+    body {
+        overflow: auto;
+        /* Your other styles for mobile landscape can go here */
+    }
+}
+
+@media screen and (max-width:576px) {
+    img{
+        width: 75px;
+        max-width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header Start -->
+    <header class="header-area">
+        <!-- site-navbar start -->
+        <div class="navbar-area">
+          <div class="container">
+            <nav class="site-navbar">
+              <!-- site logo -->
+              <a href="#" class="site-logo"><img style="width: 45px; max-width: 100%;" src="https://i.ibb.co/jD3bbVd/Home.png" alt="Logo"></a>
+
+              <h1 class="client-name">Client Name</h1>
+      
+              <!-- site menu/nav -->
+              <ul>
+                <li><a href="#" target="_blank">Care Plan</a></li>
+                <li><a href="#" target="_blank">Goals</a></li>
+                <li><a href="#" target="_blank">Shift Notes</a></li>
+                <li><a href="#" target="_blank">Medicine</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">Calender</a></li>
+                <li><a href="#" target="_blank">Edit Client</a></li>
+                <li><a href="#" target="_blank">New User</a></li>
+                <li><a href="#" target="_blank">Users</a></li>
+                <li><a href="#" target="_blank">My Profile</a></li>
+                <li><a href="#" target="_blank">..</a></li>
+                <li><a href="#" target="_blank">Logout</a></li>
+              </ul>
+      
+              <!-- nav-toggler for mobile version only -->
+              <button class="nav-toggler">
+                <span></span>
+              </button>
+            </nav>
+          </div>
+        </div><!-- navbar-area end -->
+      </header>
+
+
+
+    <!-- Home Section Start -->
+    <section id="home">
+        <div class="container-main">
+            <div class="home-content">
+                <h1>Home</h1>
+            </div>
+
+            <div class="grid-container-one">
+                <div class="care-plan plan-content">
+                    <a href="https://shiftnotes.odoo.com/care-plan" target="_blank">
+                        <img src="https://i.ibb.co/bvfd0tw/care-plan.png" alt="Care Plan">
+                        <p>Care Plan</p>
+                    </a>
+                </div>
+
+                <div class="goals plan-content">
+                    <a href="https://shiftnotes.odoo.com/goals" target="_blank">
+                        <img src="https://i.ibb.co/K711zTK/goals.png" alt="Goals">
+                        <p>Goals</p>
+                    </a>
+                </div>
+
+                <div class="shift-notes plan-content">
+                    <a href="https://shiftnotes.odoo.com/shift-notes" target="_blank">
+                        <img src="https://i.ibb.co/jVBXBPY/shift-notes.png" alt="Shift Notes">
+                        <p>Shift Notes</p>
+                    </a>
+                </div>
+
+                <div class="medical plan-content">
+                    <a href="https://shiftnotes.odoo.com/medicine" target="_blank">
+                        <img src="https://i.ibb.co/r2HGdFt/medical.png" alt="Medical">
+                        <p>Medicine</p>
+                    </a>
+                </div>
+
+                <div class="calender plan-content">
+                    <a href="https://shiftnotes.odoo.com/calendar" target="_blank">
+                        <img src="https://i.ibb.co/r0C9m20/calendar.png" alt="Calender">
+                        <p>Calender</p>
+                    </a>
+                </div>
+
+                <div class="edit-client plan-content">
+                    <a href="https://shiftnotes.odoo.com/edit-client" target="_blank">
+                        <img src="https://i.ibb.co/cNZnsrS/edit-client.png" alt="Edit Client">
+                        <p>Edit Client</p>
+                    </a>
+                </div>
+
+                <div class="new-user plan-content">
+                    <a href="https://shiftnotes.odoo.com/new-user" target="_blank">
+                        <img src="https://i.ibb.co/60ZfJGm/new-user.png" alt="New User">
+                        <p>New User</p>
+                    </a>
+                </div>
+
+                <div class="edit-user plan-content">
+                    <a href="https://shiftnotes.odoo.com/users" target="_blank">
+                        <img src="https://i.ibb.co/w4tHjT3/users.png" alt="Edit User">
+                        <p>Edit User</p>
+                    </a>
+                </div>
+
+                <div class="my-profile plan-content">
+                    <a href="https://shiftnotes.odoo.com/my-profile" target="_blank">
+                        <img src="https://i.ibb.co/M75zkRV/my-profile.png" alt="My Profile">
+                        <p>My Profile</p>
+                    </a>
+                </div>
+
+                <div class="log-out plan-content">
+                    <a href="https://c1hbz900.caspio.com/folderlogout" target="_blank">
+                        <img src="https://i.ibb.co/vwKHYKN/log-out.png" alt="Log Out">
+                        <p>Log Out</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+        function disableScroll() {
+            document.body.style.overflow = "hidden";
+        }
+    </script>
+
+
+<script>
+    // define all UI variable
+const navToggler = document.querySelector('.nav-toggler');
+const navMenu = document.querySelector('.site-navbar ul');
+const navLinks = document.querySelectorAll('.site-navbar a');
+
+// load all event listners
+allEventListners();
+
+// functions of all event listners
+function allEventListners() {
+// toggler icon click event
+navToggler.addEventListener('click', togglerClick);
+// nav links click event
+navLinks.forEach( elem => elem.addEventListener('click', navLinkClick));
+}
+
+// togglerClick function
+function togglerClick() {
+navToggler.classList.toggle('toggler-open');
+navMenu.classList.toggle('open');
+}
+
+// navLinkClick function
+function navLinkClick() {
+if(navMenu.classList.contains('open')) {
+navToggler.click();
+}
+}
+  </script>
+
+
+
+   
+
+
+   
+
+</body>
+</html>
